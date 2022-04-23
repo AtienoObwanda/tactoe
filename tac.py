@@ -23,3 +23,17 @@ def printGame(board):
     print("*********")
 
 printGame(board)
+
+#Take player input
+def playerInput(board):
+    
+    print("---------------------------------------------")
+    inp = int(input("Enter any number from 0 to 9: "))
+    print("---------------------------------------------")
+
+    if inp>=0 and inp<=9 and board[inp-1] == "-":
+        board[inp-1] = currentPlayer
+    else:
+        print("---------------------------------------------")
+        print("Ooops! Board contains player, try again")
+
