@@ -84,12 +84,18 @@ def checkTie(board): #check for a tie
         print("It's a tie")
         gameRunning = False
 
+#Check for a winner
 
-    
-
+def checkWin():
+    if checkDiagonal(board) or checkRows(board) or checkHorizontal(board):
 
 
 #Switch the player
+def switchPLayer(): #Switch between players
+    if currentPlayer == "X":
+        currentPlayer = "O"
+    else:
+        currentPlayer = "X"
 
 #Check for win or tie again
 
