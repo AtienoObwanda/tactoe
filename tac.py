@@ -37,3 +37,13 @@ def playerInput(board):
         print("---------------------------------------------")
         print("Ooops! Board contains player, try again")
 
+#Check for win or tie
+
+#Switch the player
+
+#Check for win or tie again
+
+while gameRunning:
+    printGame(board)
+    playerInput(board)
+
