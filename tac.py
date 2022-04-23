@@ -51,17 +51,31 @@ def checkHorizontal(board):
         return True
 
 def checkRows(board):
+    
     global winner
+
     if board[0]== board[3] == board[6] and board[0] != "-":
         winner = board[0]
         return True
+
     elif board[1]== board[4]== board[7] and board[1] != "-":
         winner = board[1]
         return True
+
     elif board[2]== board[5]== board[8] and board[2] != "-":
         winner = board[2]
         return True
 
+def checkDiagonal(board):
+    global winner
+
+    if board[0]== board[8] == board[9] and board[0] != "-":
+        winner = board[0]
+        return True
+
+    elif board[2]== board[4]== board[6] and board[2] != "-":
+        winner = board[2]
+        return True
 
 #Switch the player
 
