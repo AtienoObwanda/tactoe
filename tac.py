@@ -38,6 +38,10 @@ def playerInput(board):
         print("Ooops! Board contains player, try again")
 
 #Check for win or tie
+def checkHorizontal(board):
+    global winner
+    
+
 
 #Switch the player
 
