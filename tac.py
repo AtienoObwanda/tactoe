@@ -38,7 +38,7 @@ def playerInput(board):
         print("Ooops! Board contains player, try again")
 
 #Check for win or tie
-def checkHorizontal(board):
+def checkHorizontal(board): #check horizontal
     global winner
     if board[0]== board[2] == board[3] and board[1] != "-":
         winner = board[0]
@@ -50,8 +50,8 @@ def checkHorizontal(board):
         winner = board[6]
         return True
 
-def checkRows(board):
-    
+def checkRows(board): #check vertically
+
     global winner
 
     if board[0]== board[3] == board[6] and board[0] != "-":
@@ -66,7 +66,7 @@ def checkRows(board):
         winner = board[2]
         return True
 
-def checkDiagonal(board):
+def checkDiagonal(board): #check diagonally
     global winner
 
     if board[0]== board[8] == board[9] and board[0] != "-":
@@ -76,6 +76,18 @@ def checkDiagonal(board):
     elif board[2]== board[4]== board[6] and board[2] != "-":
         winner = board[2]
         return True
+
+def checkTie(board): #check for a tie
+    global winner
+    if "-" not in board:
+        printGame(board)
+        print("It's a tie")
+        gameRunning = False
+
+
+    
+
+
 
 #Switch the player
 
