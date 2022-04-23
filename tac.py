@@ -22,7 +22,7 @@ def printGame(board):
     print(board[6] + " | " + board[7] + " | " + board[8])
     print("*********")
 
-printGame(board)
+# printGame(board)
 
 #Take player input
 def playerInput(board):
@@ -78,7 +78,7 @@ def checkDiagonal(board): #check diagonally
         return True
 
 def checkTie(board): #check for a tie
-    global winner
+    global gameRunning
     if "-" not in board:
         printGame(board)
         print("It's a tie")
@@ -88,10 +88,12 @@ def checkTie(board): #check for a tie
 
 def checkWin():
     if checkDiagonal(board) or checkRows(board) or checkHorizontal(board):
-
+        print(f"The winner is {winner}")
 
 #Switch the player
-def switchPLayer(): #Switch between players
+def switchPlayer(): #Switch between players
+    global currentPlayer
+
     if currentPlayer == "X":
         currentPlayer = "O"
     else:
@@ -102,4 +104,6 @@ def switchPLayer(): #Switch between players
 while gameRunning:
     printGame(board)
     playerInput(board)
-
+    checkWin()
+    checkTie(board)
+    switchPlayer()
